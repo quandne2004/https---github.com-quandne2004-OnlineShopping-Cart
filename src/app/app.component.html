@@ -1,0 +1,65 @@
+<!-- <mat-toolbar color="primary" class="navbar">
+  <span class="navbar-brand">E-Commerce</span>
+  <span class="spacer"></span>
+  <button mat-button routerLink="/order" routerLinkActive="active">Order</button>
+  <button mat-button routerLink="/register" routerLinkActive="active">Register</button>
+  <button mat-button routerLink="/login" routerLinkActive="active">Login</button>
+</mat-toolbar> -->
+
+  
+
+    <div *ngIf="!isAdminLoggedIn && !isCustomerLoggedIn">
+      <nav class="navbar">
+        <div class="navbar-brand">E-Commerce</div>
+        <ul class="navbar-nav">
+          <li><a routerLink="order">Home</a></li>
+          <li><a routerLink="/login" routerLinkActive="active">Login</a></li>
+          <li><a routerLink="/register" routerLinkActive="active">Register</a></li>
+        </ul>
+        <button class="mode-toggle-container" id="mode-toggle">
+          <i class="sun-icon" id="sun-icon">&#9728;</i>
+        </button>
+        <button class="navbar-toggler" style="z-index:99;">&#9776;</button>
+      </nav>
+      </div>
+      
+      <div *ngIf="isCustomerLoggedIn">
+        <nav class="navbar">
+          <div class="navbar-brand">E-Commerce</div>
+          <ul class="navbar-nav">
+            <li><a routerLink="/customer/dashboard" routerLinkActive="active">DashBoard</a></li>
+            <li><a routerLink="/customer/cart" routerLinkActive="active">Cart</a></li>
+            <li><a routerLink="/customer/wishlist" routerLinkActive="active">WishList</a></li>
+            <li><a routerLink="/customer/profile" routerLinkActive="active">Profile</a></li>
+            <li><a routerLink="/customer/my_orders" routerLinkActive="active">Orders</a></li>
+            <li><a (click)="logOut()" routerLinkActive="active">Logout</a></li>
+          </ul>
+          <button class="mode-toggle-container" id="mode-toggle">
+            <i class="sun-icon" id="sun-icon">&#9728;</i>
+          </button>
+          <button class="navbar-toggler" style="z-index:99;">&#9776;</button>
+        </nav>
+        </div>
+        
+      
+        <div *ngIf="isAdminLoggedIn">
+          <nav class="navbar">
+            <div class="navbar-brand">E-Commerce</div>
+            <ul class="navbar-nav">
+              <li><a routerLink="/admin/dashboard" routerLinkActive="active">Dashboard</a></li>
+              <li><a routerLink="/admin/orders" routerLinkActive="active">Orders</a></li>
+              <li><a routerLink="/admin/analytics" routerLinkActive="active">Analytics</a></li>
+              <li><a routerLink="/admin/category" routerLinkActive="active">Category</a></li>
+              <li><a routerLink="/admin/post-product" routerLinkActive="active">Product</a></li>
+              <li><a routerLink="/admin/coupons" routerLinkActive="active">Coupons</a></li>
+              <li><a routerLink="/admin/post-coupon" routerLinkActive="active">Post Coupons</a></li>
+
+              <li><a (click)="logOut()" routerLinkActive="active">Logout</a></li>
+            </ul>
+            <button class="mode-toggle-container" id="mode-toggle">
+              <i class="sun-icon" id="sun-icon">&#9728;</i>
+            </button>
+            <button class="navbar-toggler" style="z-index:99;">&#9776;</button>
+          </nav>
+          </div>
+<router-outlet></router-outlet>

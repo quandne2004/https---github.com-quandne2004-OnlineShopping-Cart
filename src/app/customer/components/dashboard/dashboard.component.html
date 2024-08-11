@@ -1,0 +1,63 @@
+<!-- <div class="container">
+
+<div class="card" *ngFor="let item of products">
+    <div class="card-image">
+      <img [src]="item.processedImg" alt="product-image">
+    </div>
+    <div class="card-text">
+      <p class="card-meal-type" >{{item.categoryName}}</p>
+      <h2 class="card-title">{{item.name}}</h2>
+      <p class="card-body">{{item.description}}</p>
+    </div>
+    <div class="card-price">{{item.price}}</div>
+    <button mat-raised-button color="primary" class="update-button" [routerLink]="'/admin/faq/'+ item.id "> FAQ</button>
+  <button mat-raised-button color="primary" color="accent" class="updated-button" [routerLink]="'/admin/product' + item.id">Update</button>
+  </div>
+  
+</div> -->
+
+
+
+
+
+<form action="" class="search-bar" [formGroup]="searchForm" (ngSubmit)="submitForm()">
+	<input type="search" name="search" pattern=".*\S.*" required formControlName="title">
+	<button class="search-btn" type="submit">
+		<span>Search</span>
+	</button>
+</form>
+     
+<div class="container">
+  <div class="product_card" *ngFor="let item of products">
+    <div class="add_to_wishlist">
+        <i class="far fa-heart"></i>
+    </div>
+    <div class="image">
+        <img [src]="item.processedImg" alt="">
+    </div>
+    <div class="product_info">
+        <h2 class="product_name" routerLink="/customer/product/{{item.id}}">
+            {{item.name}}
+        </h2>
+        <p class="product_description">
+            {{item.description}}
+        </p>
+        <div class="colors">
+            <span>{{item.categoryName}}</span>
+        </div>
+
+        <div class="bottom">
+            <div class="price">
+                <span class="_price">${{item.price}}</span>
+            </div>
+      
+            <div class="buttons">
+                <button class="add_to_cart" (click)="addToCart(item.id)">
+                    Add to Cart
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+</div>

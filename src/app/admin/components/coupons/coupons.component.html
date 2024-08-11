@@ -1,0 +1,30 @@
+    <html>
+      <head>
+        <title>Table</title>
+      </head>
+      <body>
+        <div class="container">
+          <div class="header">
+            <div class="title">
+            <h1>Coupons</h1>
+            </div>
+          </div>
+          <div class="content">
+          <div class="tables">
+          <div class="coffee">
+          <table *ngFor="let item of coupons">
+            <tr>
+              <td id="space">{{item.id}}</td>
+              <td id="space">{{item.name}}</td>
+              <td id="space">{{item.code}}</td>
+              <td id="space">{{item.discount}}</td>
+              <td id="space">{{item.expirationDate}}</td>
+            </tr>
+           
+            </table>
+          </div>
+         </div>
+          </div>
+        </div>
+      </body>
+    </html>
